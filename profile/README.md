@@ -1,10 +1,6 @@
 # 🎬 Nextream
-**실시간 스트리밍 방송 플랫폼**
 
-## 🚀 배포 주소
-🔗 [Nextream 바로가기](https://www.nextream.store)
-
-## 📸 스크린샷
+## 실시간 스트리밍 방송 플랫폼
 <img width="1000" alt="Nextream Screenshot" src="https://github.com/user-attachments/assets/8417e9d4-8fe2-4978-a62d-5b712a2f2db2" />
 
 ## ✨ 주요 기능
@@ -13,15 +9,9 @@
 - **소셜 로그인**: NextAuth를 이용한 간편 로그인 지원
 
 ## 🛠 기술 스택
-### Frontend
-- **Framework**: Next.js, React
-- **Language**: TypeScript
-- **Styling**: Tailwind CSS
-- **State Management**: Zustand
-- **Networking**: axios
-- **Real-time Communication**: socket.io
-- **Streaming**: hls.js
-- **Authentication**: next-auth
+![image](https://github.com/user-attachments/assets/b6598a82-abe1-4ec3-b406-8bffff81499c)
+![image](https://github.com/user-attachments/assets/e40ad11f-4639-4541-97da-5e699296e9cb)
+
 
 ### Backend
 - 추후 작성 예정
@@ -116,3 +106,5 @@ feat: 로그인 기능 추가
 1. 충돌 발생 시 `git status`로 충돌 파일을 확인합니다.
 2. 충돌을 해결하고 해당 파일을 `git add` 합니다.
 3. `git commit` 후 PR을 업데이트합니다.
+
+<img width="100" alt="award" src="https://github.com/user-attachments/assets/5157997c-7d8f-477c-b898-dd14da196f5c" />
