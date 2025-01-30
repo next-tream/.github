@@ -62,15 +62,15 @@
 ### ❗️ 예슬이의 트러블슈팅 - NextAuth.js - Credentials Provider 에러 메시지 전달 이슈
 
 #### 문제 개요
-NextAuth.js의 Credentials Provider를 사용하여 로그인할 때, 서버에서 발생한 에러 메시지를 클라이언트에서 정상적으로 받을 수 없는 문제가 발생할 수 있습니다.
+NextAuth.js의 Credentials Provider를 사용하여 로그인할 때, 서버에서 발생한 에러 메시지를 클라이언트에서 정상적으로 받을 수 없는 문제 발생
 
 #### 발생 원인
-`signIn('credentials', { ... })` 함수를 사용하여 로그인 시도 시, 서버에서 `CredentialsSignin` 에러를 반환하면 클라이언트에서 이를 직접 받지 못합니다. NextAuth.js 내부적으로 `authorize` 함수의 반환값을 기반으로 세션을 생성하는데, 오류 상황에서 단순히 `return`을 하면 NextAuth는 이를 정상적인 응답으로 해석할 수 있기 때문입니다.
+NextAuth.js 내부적으로 `authorize` 함수의 반환값을 기반으로 세션을 생성하는데, `signIn('credentials', { ... })` 함수를 사용하여 로그인 시도 시, 오류 상황에서 단순히 `return`을 하면 NextAuth는 이를 정상적인 응답으로 해석할 수 없어 클라이언트에서 이를 직접 받지 못 함
 
 #### 해결 방법
-서버에서 `CredentialsSignin` 에러 발생 시 `throw`를 사용하여 클라이언트에서 이를 감지할 수 있도록 처리합니다.
+서버에서 `CredentialsSignin` 에러 발생 시 `throw`를 사용하여 클라이언트에서 이를 감지할 수 있도록 처리
 
-1. 잘못된 방식: `return` 사용: NextAuth.js는 이를 오류로 인식하지 않기 때문에 클라이언트에서 에러 처리가 어렵습니다.
+1. 잘못된 방식: `return` 사용: NextAuth.js는 이를 오류로 인식하지 않기 때문에 클라이언트에서 에러 처리가 어려움
 ```typescript
 async authorize(credentials): Promise<any> {
   if (!credentials) return null;
@@ -86,7 +86,7 @@ async authorize(credentials): Promise<any> {
 }
 ```
 
-2. 올바른 방식: `throw` 사용: 클라이언트에서 `signIn` 함수를 사용할 때 `catch`로 에러를 잡을 수 있습니다.
+2. 올바른 방식: `throw` 사용: 클라이언트에서 `signIn` 함수를 사용할 때 `catch`로 에러 캐치
 ```typescript
 async authorize(credentials): Promise<any> {
   if (!credentials) return null;
@@ -126,5 +126,3 @@ async function signinFuc() {
 - **잘못된 방법**: `return error` → ❌ 클라이언트에서 에러를 정상적으로 받을 수 없음
 - **올바른 방법**: `throw new Error(error.response.data.message)` → ✅ 클라이언트에서 catch로 에러를 받을 수 있음
 - **클라이언트 처리**: `signIn`의 결과에서 `error`를 확인하여 사용자에게 적절한 피드백 제공
-
-이와 같은 방식으로 처리하면 서버에서 발생한 에러 메시지를 클라이언트에서 정상적으로 받을 수 있습니다.
