@@ -65,7 +65,7 @@
 NextAuth.js의 Credentials Provider를 사용하여 로그인할 때, 서버에서 발생한 에러 메시지를 클라이언트에서 정상적으로 받을 수 없는 문제 발생
 
 #### 발생 원인
-NextAuth.js 내부적으로 `authorize` 함수의 반환값을 기반으로 세션을 생성하는데, `signIn('credentials', { ... })` 함수를 사용하여 로그인 시도 시, 오류 상황에서 단순히 `return`을 하면 NextAuth는 이를 정상적인 응답으로 해석할 수 없어 클라이언트에서 이를 직접 받지 못 함
+NextAuth.js 내부적으로 `authorize` 함수의 반환값을 기반으로 세션을 생성하는데, `signIn('credentials', { ... })` 함수를 사용하여 로그인 시도 시, 오류 상황에서 단순히 `return`을 하면 NextAuth는 이를 정상적인 응답으로 해석할 수 없어 클라이언트에서 이를 직접 받지 못함
 
 #### 해결 방법
 서버에서 `CredentialsSignin` 에러 발생 시 `throw`를 사용하여 클라이언트에서 이를 감지할 수 있도록 처리
