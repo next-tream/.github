@@ -10,14 +10,8 @@
 
 ## 🛠 기술 스택
 ![image](https://github.com/user-attachments/assets/b6598a82-abe1-4ec3-b406-8bffff81499c)
-![image](https://github.com/user-attachments/assets/e40ad11f-4639-4541-97da-5e699296e9cb)
+<img width="1000" alt="Nextream Screenshot" src="https://github.com/user-attachments/assets/96b55886-fdd7-4e2d-91c6-4fc6d469e6c9" />
 
-
-### Backend
-- 추후 작성 예정
-
-### CI/CD
-- 추후 작성 예정
 
 ## 📁 폴더 구조
 
