@@ -55,4 +55,5 @@
 
 [if kakao 2024 후기](https://velog.io/@rjs8833/Kakao-ifkakaoAI-2024-%EB%AA%A8%EB%93%A0-%EC%97%B0%EA%B2%B0%EC%9D%84-%EC%83%88%EB%A1%AD%EA%B2%8C-%ED%9B%84%EA%B8%B0) **kakao에서 사용하는 AI인 Code Buddy**에서 영감을 받아, 특정 브랜치에 PR이 생성될 때 OpenAI를 활용한 자동 코드 리뷰 시스템을 구축했습니다. GitHub Actions를 통해 diff된 코드만 추출하여 OpenAI에 전달하고, `팀의 네이밍 규칙, 파일 구조, 코드 가독성, TypeScript 규칙, useState 선언 위치` 등을 검토하도록 설정했습니다. 이를 통해 코드 규칙 위반 사항을 자동으로 피드백받을 수 있도록 하였으며, 팀원의 코드 리뷰 시간을 단축하여 개발에 집중할 수 있는 환경을 마련했습니다.
 
+### 우수 팀 프로젝트 상
 <img width="500" alt="award" src="https://github.com/user-attachments/assets/5157997c-7d8f-477c-b898-dd14da196f5c" />
