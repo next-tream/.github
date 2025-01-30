@@ -22,10 +22,9 @@
 /app
   /Home
     /_components  # Home 페이지에서만 사용하는 컴포넌트
-    /_store       # Home 페이지에서만 사용하는 Zustand 등 상태 관리 파일
-    /hooks        # Home 페이지에서만 사용하는 커스텀 훅
     /_types       # Home 페이지에서만 사용하는 타입 정의
-    page.tsx     # Home 페이지의 메인 파일
+    page.tsx      # Home 페이지의 page.tsx
+    layout.tsx    # Home 페이지의 공통 layout
 ```
 
 ### common
@@ -33,18 +32,17 @@
 
 ```
 /common
+  /actions     # Next Server 정의
   /components  # 공통 컴포넌트
+  /configs     # 초기 환경 셋팅
   /constants   # 상수 정의
   /hooks       # 공통적으로 사용하는 커스텀 훅
   /layouts     # 공통 레이아웃
+  /libs        # ShadCN 셋팅
   /schema      # Zod 스키마 정의
+  /stores      # 전역 상태관리
   /types       # 공통 타입 정의
   /utils       # 유틸리티 함수
-```
-
-### 기타 주요 폴더
-```
-/public   # 정적 파일 (이미지, 아이콘 등)
 ```
 
 이러한 구조를 통해 페이지별로 독립적인 관리를 하면서도, 공통적으로 사용하는 요소들은 `common` 폴더에서 재사용할 수 있도록 구성하였습니다.
